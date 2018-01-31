@@ -3,6 +3,7 @@ import HomeScreen from "./HomeScreen";
 import CarDetails from "./CarDetails";
 import Login from "../login/Login";
 import Register from "../login/Register"
+import Map from "./MapCarPosition";
 
 const myNavigator = StackNavigator({
   Login:{
@@ -15,6 +16,11 @@ const myNavigator = StackNavigator({
   },
   Home: {
     screen: HomeScreen,
+    navigationOptions:{
+    },
+  },
+  CarMap: {
+    screen: Map,
     navigationOptions:{
     },
   },

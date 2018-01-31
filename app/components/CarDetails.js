@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Button } from 'react-native';
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme } from "victory-native";
 import User from '../login/User';
+import Map from './MapCarPosition';
 
 export default class CarDetails extends Component {
   
@@ -66,7 +67,7 @@ export default class CarDetails extends Component {
         y="value"
         />
         </VictoryChart>
-        <Button title="Show car location"  onPress={ () => this.props.navigation.navigate('Register') } color="#2196F3" />
+        {/* <Button title="Show car location"  onPress={ () => this.props.navigation.navigate('CarMap') } color="#2196F3" /> */}
       </View>
     )
   }
