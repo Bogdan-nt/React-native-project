@@ -14,22 +14,22 @@ const myNavigator = StackNavigator({
     navigationOptions:{},
   },
   Home: {
-      screen: HomeScreen,
-      navigationOptions:{
-      },
+    screen: HomeScreen,
+    navigationOptions:{
     },
+  },
   Car: { 
     screen: CarDetails,
     navigationOptions:
-      ({ navigation }) => ({
-        title:navigation.state.params.name,
-      })
-    },
-   },
-  {
-    initialRouteName: "Home",
-    headerMode: "screen",
-  }
+    ({ navigation }) => ({
+      title:navigation.state.params.name,
+    })
+  },
+},
+{
+  initialRouteName: "Home",
+  headerMode: "screen",
+}
 );
 
 export default myNavigator;
