@@ -1,34 +1,34 @@
 import  { AsyncStorage } from 'react-native';
-//import  { ACCESS_TOKEN } from '../Config';
+import  { ACCESS_TOKEN } from './Config';
 import { authorized } from './Utils';
 
 let User = {
     logout: () => {
-        return AsyncStorage.removeItem("")
+        return AsyncStorage.removeItem(ACCESS_TOKEN)
     },
     getToken: () => {
-        return AsyncStorage.getItem("");
+        return AsyncStorage.getItem(ACCESS_TOKEN);
     },
     isLoggedIn:() =>{
-        // return AsyncStorage.getItem(ACCESS_TOKEN).then((val) => {
-        //     if(typeof val != 'string') {
-        //         return {logged: false}
-        //     } else { 
+        return AsyncStorage.getItem(ACCESS_TOKEN).then((val) => {
+            if(typeof val != 'string') {
                 return {logged: false}
-            //}
-       // })
+            } else { 
+                return {logged: true}
+            }
+        })
     },
     getSources: () => {
-        const url = `http://172.30.118.51:8000/sources/`;
+        const url = `http://127.0.0.1:8000/sources/`;
         return authorized(url, 'GET');
     },
     addSource: (sourceData) => {
-        const url = `http://172.30.118.51:8000/sources/`;
+        const url = `http://127.0.0.1:8000/sources/`;
         return authorized(url, 'POST', JSON.stringify(sourceData));
     },
     login: (user)=> {
         console.log('here');
-        const url = `http://172.30.118.51:8000/login/`;
+        const url = `http://127.0.0.1:8000/login/`;
         return fetch(url, {
             method: 'POST',
             headers:{

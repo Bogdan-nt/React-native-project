@@ -9,7 +9,7 @@ export function authorized(url, method = 'GET', body = {}, noBody = false) {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'Authorization': `Token ${token}`
+                
             }
         }
         if (method !== 'GET' && method !== 'HEAD' && method !== 'DELETE' && !noBody)  {

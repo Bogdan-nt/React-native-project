@@ -27,7 +27,7 @@ const myNavigator = StackNavigator({
   },
 },
 {
-  initialRouteName: "Home",
+  initialRouteName: "Login",
   headerMode: "screen",
 }
 );
